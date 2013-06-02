@@ -21,15 +21,6 @@ autoload -U compinit
 compinit -i
 
 
-# Load all of the plugins that were defined in ~/.zshrc
-for plugin ($plugins); do
-  if [ -f $ZSH_CUSTOM/plugins/$plugin/$plugin.plugin.zsh ]; then
-    source $ZSH_CUSTOM/plugins/$plugin/$plugin.plugin.zsh
-  elif [ -f $ZSH/plugins/$plugin/$plugin.plugin.zsh ]; then
-    source $ZSH/plugins/$plugin/$plugin.plugin.zsh
-  fi
-done
-
 # Load all of your custom configurations from custom/
 for config_file ($ZSH_CUSTOM/*.zsh(N)); do
   source $config_file
